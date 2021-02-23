@@ -1,11 +1,11 @@
 .item {
   height: 100vh;
-  width: 100vw;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
+  scroll-snap-align: start;
 }
 
 .item_container {
@@ -38,6 +38,7 @@
 
 .item_buttons {
   display: flex;
+  cursor: pointer;
 }
 
 .item_expand {
@@ -45,4 +46,6 @@
   width: 100%;
   margin-top: 3%;
   justify-content: center;
+  text-align: center;
+  cursor: pointer;
 }
