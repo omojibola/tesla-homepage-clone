@@ -14,6 +14,7 @@ const Item = ({
   rightBtnLink,
   twoButtons,
   first,
+  footer,
 }) => {
   return (
     <div
@@ -42,6 +43,18 @@ const Item = ({
             </div>
           )}
         </div>
+        {footer && (
+          <div className="footer">
+            <p>Tesla © 2021</p>
+            <p>Privacy & Legal</p>
+            <p>Contact</p>
+            <p>Careers</p>
+            <p>Get Newsletter</p>
+            <p>News</p>
+            <p>Forums</p>
+            <p>Location</p>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -37,3 +37,14 @@
 .header_right > p {
   margin: 10px;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.menu_icon {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

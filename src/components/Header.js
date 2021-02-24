@@ -1,8 +1,10 @@
 import React from 'react';
 import './Header.css';
+import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
 import TeslaLogo from '../assets/teslaLogoSmall.svg';
 
-const Header = () => {
+const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <div className="header">
       <div className="header_logo">
@@ -15,12 +17,15 @@ const Header = () => {
         <p>Model X</p>
         <p>Model Y</p>
         <p>Solar Roof</p>
-        <p>Solar Panel</p>
+        <p>Solar Panels</p>
       </div>
 
       <div className="header_right">
-        <p>Shop</p>
-        <p>Tesla Account</p>
+        <p className={isMenuOpen && 'hidden'}>Shop</p>
+        <p className={isMenuOpen && 'hidden'}>Tesla Account</p>
+        <div className="menu_icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+        </div>
       </div>
     </div>
   );

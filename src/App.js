@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 
@@ -9,60 +10,31 @@ import ModelY from './assets/Desktop-ModelY.jpeg';
 import SolarPanels from './assets/Desktop-SolarPanels.jpeg';
 import SolarRoof from './assets/Desktop-SolarRoof.jpeg';
 import Item from './components/Item';
+import Menu from './components/Menu';
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div className="App">
-      <Header />
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      {isMenuOpen && <Menu />}
+
       <div className="app_itemsContainer">
         <Item
-          title="Lowest Cost Solar Panels in America"
-          desc="Money-back guarantee"
+          title="Model S"
+          desc="Order online for Touchless Delivery"
           descLink=""
-          backgroundImg={SolarPanels}
-          leftBtnTxt="ORDER NOW"
+          backgroundImg={Model3}
+          leftBtnTxt="CUSTOM ORDER"
           leftBtnLink=""
-          rightBtnTxt="LEARN MORE"
+          rightBtnTxt="EXISTING INVENTORY"
           rightBtnLink=""
           twoButtons="true"
           first
         />
         <Item
-          title="LModel S"
-          desc="$69,420"
-          descLink=""
-          backgroundImg={ModelS}
-          leftBtnTxt="CUSTOM ORDER"
-          leftBtnLink=""
-          rightBtnTxt="LEARN MORE"
-          rightBtnLink=""
-          twoButtons="true"
-        />
-        <Item
-          title="Model 3"
-          desc="Money-back guarantee"
-          descLink=""
-          backgroundImg={Model3}
-          leftBtnTxt="CUSTOM ORDER"
-          leftBtnLink=""
-          rightBtnTxt="LEARN MORE"
-          rightBtnLink=""
-          twoButtons="true"
-        />
-        <Item
-          title="Model X"
-          desc="Money-back guarantee"
-          descLink=""
-          backgroundImg={ModelX}
-          leftBtnTxt="CUSTOM ORDER"
-          leftBtnLink=""
-          rightBtnTxt="LEARN MORE"
-          rightBtnLink=""
-          twoButtons="true"
-        />
-        <Item
           title="Model Y"
-          desc="Money-back guarantee"
+          desc="Order online for Touchless Delivery"
           descLink=""
           backgroundImg={ModelY}
           leftBtnTxt="CUSTOM ORDER"
@@ -72,8 +44,41 @@ function App() {
           twoButtons="true"
         />
         <Item
-          title="Solar for New Roofs"
+          title="Model 3"
+          desc="Order online for Touchless Delivery"
+          descLink=""
+          backgroundImg={Model3}
+          leftBtnTxt="CUSTOM ORDER"
+          leftBtnLink=""
+          rightBtnTxt="EXISTING INVENTORY"
+          rightBtnLink=""
+          twoButtons="true"
+        />
+        <Item
+          title="Model X"
+          desc="Order online for Touchless Delivery"
+          descLink=""
+          backgroundImg={ModelX}
+          leftBtnTxt="CUSTOM ORDER"
+          leftBtnLink=""
+          rightBtnTxt="LEARN MORE"
+          rightBtnLink=""
+          twoButtons="true"
+        />
+        <Item
+          title="Lower Cost Solar Panels in America"
           desc="Money-back guarantee"
+          descLink=""
+          backgroundImg={SolarPanels}
+          leftBtnTxt="ORDER NOW"
+          leftBtnLink=""
+          rightBtnTxt="LEARN MORE"
+          rightBtnLink=""
+          twoButtons="true"
+        />
+        <Item
+          title="Solar for New Roofs"
+          desc="Solar Roof Costs Less Than a New Roof Plus Solar Panels"
           descLink=""
           backgroundImg={SolarRoof}
           leftBtnTxt="ORDER NOW"
@@ -84,13 +89,14 @@ function App() {
         />
         <Item
           title="Accessories"
-          desc="Money-back guarantee"
+          desc=""
           descLink=""
           backgroundImg={Accessories}
           leftBtnTxt="SHOP NOW"
           leftBtnLink=""
           rightBtnTxt="LEARN MORE"
           rightBtnLink=""
+          footer
         />
       </div>
     </div>

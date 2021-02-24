@@ -3,3 +3,8 @@
   overflow: auto;
   height: 100vh;
 }
+
+.app_itemsContainer::-webkit-scrollbar,
+.menuStyle::-webkit-scrollbar {
+  display: none;
+}
