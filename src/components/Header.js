@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import TeslaLogo from '../assets/teslaLogoSmall.svg';
@@ -22,7 +23,13 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
 
       <div className="header_right">
         <p className={isMenuOpen && 'hidden'}>Shop</p>
-        <p className={isMenuOpen && 'hidden'}>Tesla Account</p>
+
+        <p className={isMenuOpen && 'hidden'}>
+          <Link className="link_text" to="/login">
+            Tesla Account{' '}
+          </Link>
+        </p>
+
         <div className="menu_icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
         </div>
